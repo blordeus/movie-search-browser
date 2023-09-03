@@ -1,0 +1,10 @@
+.hero-container {
+    position: relative;
+    z-index: 100;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 200;
+}
+

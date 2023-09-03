@@ -1,0 +1,16 @@
+.hero-container {
+    position: relative;
+    z-index: 100;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 200;
+}
+
+.hero-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
