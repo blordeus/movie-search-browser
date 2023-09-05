@@ -4,7 +4,7 @@ import NavBar from './components/Navbar';
 import About from './components/About';
 import Search from './components/Search';
 import Movie from './components/Movie';
-import notFound from './components/notFound';
+import 404Page from './components/404Page';
 import { Routes, Route } from 'react-router-dom';
 import {useState, useEffect} from 'react';
 
@@ -42,7 +42,6 @@ function App() {
         <Route path='/about' element={<About/>}/>
         <Route path='/search' element={<Search  keyword={searchText} searchResults={searchResults}/>}/>
         <Route path='/movies/:id' element={<Movie/>}/>
-        <Route path='*' element={<notFound/>}/>
       </Routes>
     </>
   )

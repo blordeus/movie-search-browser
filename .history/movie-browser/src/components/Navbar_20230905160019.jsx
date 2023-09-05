@@ -1,20 +1,13 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from "react-router-dom";
 
-const Navbar = ({ searchText, setSearchText }) => {
-  const [searchQuery, setSearchQuery] = useState('');
-
+const Navbar = ({searchText, setSearchText}) => {
   const updateSearchText = (e) => {
-    setSearchQuery(e.target.value);
+    console.log(e.target.value)
+    history('/search')
+    setSearchText(e.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSearchText(searchQuery);
-    history('/search');
-  };
-
-  const history = useNavigate();
+  const history = useNavigate()
 
   return (
     <nav className="navbar navbar-expand-sm bg-body-tertiary">
@@ -51,15 +44,16 @@ const Navbar = ({ searchText, setSearchText }) => {
               </Link>
             </li>
           </ul>
-          <form className="d-flex" role="search" onSubmit={handleSubmit}>
+          <form className="d-flex" role="search">
             <input
               className="form-control me-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
-              value={searchQuery}
+              value={searchText}
               onChange={updateSearchText}
             />
+            //TODO:
             <button className="btn btn-outline-success" type="submit">
               Search
             </button>

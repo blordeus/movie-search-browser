@@ -1,0 +1,4 @@
+create a 404 page
+app.use(function (req, res) {
+    res
+    

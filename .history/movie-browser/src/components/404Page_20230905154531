@@ -1,0 +1,4 @@
+create a 404 React component 
+import React from 'react'
+const NotFound = () => {
+    

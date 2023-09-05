@@ -31,21 +31,16 @@ const Search = ({ keyword, searchResults }) => {
   const results = searchResults.map((obj, i) => {
     return <MovieCard key={i} movie={obj} />
   });
-
-  const noResultsMessage = <p>No search results found.</p>;
-
   return (
     <div>
       <Hero text={title} />
-      {results.length > 0 ? (
+      {results &&
         <div className="container">
           <div className="row">
             {results}
           </div>
         </div>
-      ) : (
-        noResultsMessage
-      )}
+      }
     </div>
   );
 };

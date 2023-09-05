@@ -42,7 +42,7 @@ function App() {
         <Route path='/about' element={<About/>}/>
         <Route path='/search' element={<Search  keyword={searchText} searchResults={searchResults}/>}/>
         <Route path='/movies/:id' element={<Movie/>}/>
-        <Route path='*' element={<notFound/>}/>
+        
       </Routes>
     </>
   )

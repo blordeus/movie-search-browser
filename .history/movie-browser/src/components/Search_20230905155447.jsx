@@ -5,13 +5,8 @@ import { Link } from "react-router-dom";
 //'https://api.themoviedb.org/3/search/movie?query=avengers&include_adult=false&language=en-US&page=1'
 
 const MovieCard = ({movie}) => {
-    const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-    const detailUrl = `/movies/${movie.id}`;
-    
-    if (!movie.poster_path) {
-        return null;
-    }
-    
+    const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`; // Add the URL of the movie poster here
+    const detailUrl = `/movies/${movie.id}`
     return (
         <div className="col-lg-3 col-md-6 col-12 my-4">
             <div className="card" style={{width: "18rem"}}>
@@ -31,24 +26,29 @@ const Search = ({ keyword, searchResults }) => {
   const results = searchResults.map((obj, i) => {
     return <MovieCard key={i} movie={obj} />
   });
-
-  const noResultsMessage = <p>No search results found.</p>;
-
   return (
     <div>
       <Hero text={title} />
-      {results.length > 0 ? (
+      {results &&
         <div className="container">
           <div className="row">
             {results}
           </div>
         </div>
-      ) : (
-        noResultsMessage
-      )}
+      }
     </div>
   );
 };
 
 export default Search;
 
+//event handler for no search results
+// const notFound = () => {
+//   return (
+//     <div>
+//       <Hero text="404 Page Not Found" />
+//     </div>
+//   );
+
+)
+}
